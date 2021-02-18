@@ -1,0 +1,26 @@
+mat-card-title {
+    font-size: medium;
+}
+
+mat-card-subtitle {
+    /* font-size: x-small; */
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+mat-card-actions {
+    position: absolute;
+    bottom: 8px;
+}
+
+mat-card {
+    min-width: 150px;
+    max-width: 150px;
+    margin: 10px;
+}

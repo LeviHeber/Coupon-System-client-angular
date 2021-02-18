@@ -1,0 +1,46 @@
+<div class="jeneral-container">
+    <ng-template #loading>
+        <mat-progress-bar mode="buffer"></mat-progress-bar>
+    </ng-template>
+    <form mat-dialog-content action="" *ngIf="client; else loading">
+        <h1 mat-dialog-title>{{action}} {{typeAction}}</h1>
+        <div class="input-container">
+            <div class="row1">
+                <mat-form-field *ngIf="isCompany" appearance="fill" class="company-name-input">
+                    <mat-label>name</mat-label>
+                    <input matInput name="companyName" placeholder="name" [formControl]="companyName">
+                </mat-form-field>
+                <mat-form-field *ngIf="!isCompany" appearance="fill" class="customer-first-name-input">
+                    <mat-label>first name</mat-label>
+                    <input matInput name="customerFirstName" placeholder="first name" [formControl]="customerFirstName">
+                </mat-form-field>
+                <mat-form-field *ngIf="!isCompany" appearance="fill" class="customer-last-name-input">
+                    <mat-label>last name</mat-label>
+                    <input matInput name="customerLasttName" placeholder="last name" [formControl]="customerLastName">
+                </mat-form-field>
+            </div>
+            <div class="row2">
+
+                <mat-form-field appearance="fill" *ngIf="!isCompany || !isUpdate || !this.isAdmin">
+                    <mat-label>email</mat-label>
+                    <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                    <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                </mat-form-field>
+
+            </div>
+        </div>
+        <mat-dialog-actions *ngIf="isAdmin">
+            <button type="button" mat-flat-button [mat-dialog-close]="client" (click)="addOrUpdate()">{{action}}</button>
+            <button type="button" mat-flat-button (click)="cancel()">cancel</button>
+            <button type="button" mat-flat-button *ngIf="isUpdate" [mat-dialog-close]="client" (click)="delete($event)">delete</button>
+        </mat-dialog-actions>
+    </form>
+</div>

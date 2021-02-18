@@ -1,0 +1,10 @@
+<div class=container>
+    <div class='logo'>
+        <img src="../../../../assets/logo_transparent.png" alt="">
+    </div>
+    <div class=info>
+        <span>Hello {{this.user.userName}}</span>
+        <button mat-flat-button (click)="loginTuch()" *ngIf='!this.user.clientType'>login</button>
+        <button mat-flat-button (click)="logout()" *ngIf='this.user.clientType'>logout</button>
+    </div>
+</div>

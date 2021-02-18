@@ -1,0 +1,105 @@
+mat-dialog-actions {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mat-dialog-content {
+    width: 700px;
+    height: 300px;
+}
+
+.jeneral-container {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.row1,
+.row2 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+
+/* .number-input {
+    flex-grow: 1;
+}
+.date-input {
+    flex-grow: 2;
+}
+.image-input {
+    flex-grow: 3;
+}
+.category-input {
+    flex-grow: 2;
+}
+.title-input {
+    flex-grow: 3;
+}
+.description-input {
+    flex-grow: 4;
+} */
+
+mat-form-field {
+    margin: 4px;
+    flex: 1;
+    /* width: 10%; */
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(185, 158, 123) !important;
+}
+
+ ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgb(185, 158, 123) !important;
+}
+
+ ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: rgb(185, 158, 123) !important;
+    ;
+}
+
+button {
+    margin-left: 10px;
+    border: 1px solid rgb(185, 158, 123);
+    /* background-color: rgb(241, 214, 179); */
+}
+
+button.mat-flat-button:hover {
+    background-color: rgb(185, 158, 123);
+    color: rgb(255, 255, 255);
+}
+
+.example-right-align {
+    text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.example-right-align {
+    -moz-appearance: textfield;
+}

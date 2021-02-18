@@ -1,0 +1,119 @@
+table {
+    width: 100%;
+    flex: 8;
+}
+
+th {
+    font-weight: normal;
+}
+
+tr.example-detail-row {
+    height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+}
+
+.example-element-row td {
+    border-bottom-width: 0;
+}
+
+.example-element-detail {
+    overflow: hidden;
+    display: flex;
+}
+
+.example-element-diagram {
+    width: 100%;
+    min-width: 80px;
+    max-width: 150px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+}
+
+.example-element-image {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+    background: rgb(185, 158, 123) !important;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+    background-color: rgb(241, 214, 179);
+    ;
+}
+
+.example-element-description {
+    padding: 16px;
+}
+
+.example-element-description-attribution {
+    opacity: 0.5;
+}
+
+.example-right-align {
+    text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.example-right-align {
+    -moz-appearance: textfield;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.filter-class {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+
+h2 {
+    text-align: center;
+}
+
+table,
+.filter-class,
+mat-divider {
+    margin: 8px;
+}
+
+mat-form-field {
+    margin: 4px;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(185, 158, 123) !important;
+}
+
+ ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgb(185, 158, 123) !important;
+}
+
+ ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: rgb(185, 158, 123) !important;
+    ;
+}

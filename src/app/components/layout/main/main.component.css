@@ -1,0 +1,49 @@
+.tabt,
+a:hover {
+    background-color: rgb(241, 214, 179);
+}
+
+.container {
+    height: 100%;
+    margin-top: 10px;
+}
+
+a {
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
+    background-color: rgb(39, 184, 176) !important;
+}
+
+::ng-deep.mat-tab-link {
+    color: rgb(148, 127, 99);
+    opacity: 1 !important;
+}
+
+::ng-deep.mat-tab-label {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: rgb(189, 28, 162);
+    font-weight: 700;
+}
+
+
+/* Styles for the active tab label */
+
+::ng-deep.mat-tab-label.mat-tab-label-active {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: rgb(0, 255, 76);
+    font-weight: 700;
+}
+
+
+/* Styles for the ink bar */
+
+::ng-deep .mat-ink-bar {
+    background-color: green;
+}

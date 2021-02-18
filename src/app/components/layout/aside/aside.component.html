@@ -1,0 +1,19 @@
+<div>
+    <a routerLink='detals' *ngIf='this.user.clientType'>deshbord</a>
+</div>
+
+
+<div>
+    <a routerLink='/company/coupons' *ngIf='isCompany'>get coupons</a>
+</div>
+<div>
+    <a routerLink='/company/coupon' *ngIf='isCompany'>add coupon</a>
+</div>
+
+
+<div>
+    <a routerLink='/customer/coupons' *ngIf='isCustomer'>get purchases</a>
+</div>
+<div>
+    <a routerLink='/customer/coupon' *ngIf='isCustomer'>purchases coupon</a>
+</div>

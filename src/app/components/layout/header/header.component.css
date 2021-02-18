@@ -1,0 +1,32 @@
+.container {
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.logo {
+    height: 80%;
+}
+
+img {
+    height: 100%;
+}
+
+button {
+    margin-left: 10px;
+    border: 1px solid rgb(185, 158, 123);
+    background-color: rgb(241, 214, 179);
+}
+
+button.mat-flat-button:hover {
+    background-color: rgb(185, 158, 123);
+    color: rgb(255, 255, 255);
+}
+
+* {
+    color: rgb(148, 127, 99);
+}

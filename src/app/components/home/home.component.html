@@ -1,0 +1,22 @@
+<!-- <div fxLayout="row wrap"> -->
+<!-- <div fxFlex="15" fxFlex.sm="33.3" fxFlex.xs="50" *ngFor="let coupon of coupons">
+        <mat-grid-list cols="1" rowHeight="2:1"> -->
+<div class="container">
+    <mat-card class="example-card" *ngFor="let coupon of coupons">
+        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <mat-card-title>{{coupon.title}}</mat-card-title>
+        <mat-card-subtitle>{{coupon.company.name}}</mat-card-subtitle>
+        <img mat-card-image src={{coupon.image}} alt="{{coupon.title}}">
+        <mat-card-content>
+            <p>{{coupon.description}} </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-icon-button color="basic" [disabled]="buydDisabled(coupon)" (click)="buy(coupon.id)" aria-label="Example icon button with a delete icon">
+                <mat-icon>shopping_cart</mat-icon> | ₪&nbsp;{{coupon.price}} |  amount: {{coupon.amount}}
+                </button>
+        </mat-card-actions>
+    </mat-card>
+    <!-- </mat-grid-list>
+        </div> -->
+</div>
+<!-- </div> -->

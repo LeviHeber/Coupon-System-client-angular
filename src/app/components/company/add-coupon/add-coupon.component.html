@@ -1,0 +1,66 @@
+<div class="jeneral-container">
+    <ng-template #loading>
+        <mat-progress-bar mode="buffer"></mat-progress-bar>
+    </ng-template>
+    <form mat-dialog-content action="" *ngIf="coupon; else loading">
+        <h1 mat-dialog-title>{{action}} Coupon</h1>
+        <div class="input-container">
+            <div class="row1">
+                <mat-form-field appearance="fill" class="category-input">
+                    <mat-label>category</mat-label>
+                    <mat-select name="category" placeholder="category" [formControl]="category">
+                        <mat-option *ngFor="let type of couponCategory | keyvalue;" [value]="type.value">{{type.value}}</mat-option>
+                    </mat-select>
+                    <!-- <mat-hint align="end">Here's the dropdown arrow ^</mat-hint> -->
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="title-input">
+                    <mat-label>title</mat-label>
+                    <input matInput name="title" placeholder="title" [formControl]="title">
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="description-input">
+                    <mat-label>description</mat-label>
+                    <input matInput name="description" placeholder="description" [formControl]="description">
+                </mat-form-field>
+            </div>
+            <div class="row2">
+
+                <mat-form-field appearance="fill" class="date-input">
+                    <mat-label>start date</mat-label>
+                    <input matInput name="startDate" [max]="endDate.value" [formControl]="startDate" [matDatepicker]="startPicker">
+                    <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #startPicker></mat-datepicker>
+                    <mat-error *ngIf="startDate.invalid">start date must be before end date</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="date-input">
+                    <mat-label>end date</mat-label>
+                    <input matInput name="endDate" [min]="startDate.value" [formControl]="endDate" [matDatepicker]="endPicker">
+                    <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #endPicker></mat-datepicker>
+                    <mat-error *ngIf="endDate.invalid">end date must be after start date</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="number-input">
+                    <mat-label>amount</mat-label>
+                    <input matInput type="number" name="amount" placeholder="amount" [formControl]="amount" min="0">
+                    <mat-error *ngIf="amount.invalid">only a positive integer</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="number-input">
+                    <mat-label>price</mat-label>
+                    <input matInput type="number" name="price" [formControl]="price" class="example-right-align" step="0.1" min="0">
+                    <span matPrefix>₪&nbsp;</span>
+                    <!-- <span matSuffix>.00</span> -->
+                    <mat-error *ngIf="price.invalid">only a positive price</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="image-input">
+                    <mat-label>image</mat-label>
+                    <input matInput name="image" placeholder="image" [formControl]="image">
+                </mat-form-field>
+            </div>
+        </div>
+        <mat-dialog-actions>
+            <button type="button" mat-flat-button (click)="addOrUpdate()">{{action}}</button>
+            <button type="button" mat-flat-button (click)="cancel()">cancel</button>
+            <button type="button" mat-flat-button *ngIf="isUpdate" (click)="delete($event)">delete</button>
+        </mat-dialog-actions>
+    </form>
+</div>
